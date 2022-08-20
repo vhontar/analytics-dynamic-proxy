@@ -9,6 +9,7 @@ object AnalyticsHelper {
     fun createConsoleAnalytics(): Analytics {
         val service = AnalyticsService.Builder()
             .setAnalyticsTracker(ConsoleAnalyticsTracker())
+            .useCaching()
             .build()
 
         return service.create(Analytics::class.java)
